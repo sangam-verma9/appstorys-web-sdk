@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 // import play_image from '../assets/play_image.png'
 // import pause_image from '../assets/pause_image.png'
 // import close_image from '../assets/close_image.png'
-import { MdClose , MdPlayArrow, MdPause} from 'react-icons/md';
+import { MdClose, MdPlayArrow, MdPause } from 'react-icons/md';
 import { UserActionTrack } from '../Utilities/UserActionTrack.jsx';
 
 const Pip = ({ access_token, campaigns, user_id }) => {
@@ -181,7 +181,7 @@ const Pip = ({ access_token, campaigns, user_id }) => {
 
   return (
     <div
-      className="fixed select-none"
+      className="fixed select-none z-50"
       style={{
         top: position.y,
         left: position.x,
@@ -238,13 +238,13 @@ const Pip = ({ access_token, campaigns, user_id }) => {
                     /> */}
                     {isPaused ? (
                       <MdPlayArrow
-                      size={20}
-                      className="h-[20px]"
+                        size={20}
+                        className="h-[20px]"
                       />
                     ) : (
                       <MdPause
-                      size={20}
-                      className="h-[20px]"
+                        size={20}
+                        className="h-[20px]"
                       />
                     )}
                   </button>

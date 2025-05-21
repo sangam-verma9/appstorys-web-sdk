@@ -25,15 +25,15 @@ const Banner = ({ access_token, campaigns, user_id }) => {
     } catch (error) {
       console.error("Error in tracking click:", error);
     }
-  
+
   }
 
   return (
     <>
       {data && data.details && data.details.image !== "" && bannerVisible && (
         <div
-        // className="flex flex-col w-full h-full justify-end items-center fixed bottom-3"
-        className="w-[100%] left-[10%] fixed bottom-3"
+          // className="flex flex-col w-full h-full justify-end items-center fixed bottom-3"
+          className="w-[100%] left-[10%] fixed bottom-3 z-50"
         >
           <div className="h-[100px] w-[80%] max-[904px]:w-[85%] max-[768px]:w-[95%] max-[768px]:h-[80px] relative mb-[10px]">
             {/* <img
@@ -45,12 +45,12 @@ const Banner = ({ access_token, campaigns, user_id }) => {
               }}
             /> */}
             <MdClose
-            size={20}
-            className="absolute h-[20px] bg-white rounded-full -top-1 -right-1 shadow-lg shadow-slate-400"
-            onClick={() => {
-              setBannerVisisble(false);
-            }}
-          />
+              size={20}
+              className="absolute h-[20px] bg-white rounded-full -top-1 -right-1 shadow-lg shadow-slate-400"
+              onClick={() => {
+                setBannerVisisble(false);
+              }}
+            />
             <a
               href={`${data.details.link}`}
               target="blank"

@@ -33,7 +33,7 @@ const Floater = ({ access_token, campaigns, user_id, data }) => {
     return (
         <div 
         // className='flex justify-end items-end w-full h-full p-[25px] fixed bottom-5 right-5 max-[1024px]:right-3 max-[1024px]:bottom-3 max-[490px]:right-[5px] max-[490px]:bottom-[5px]'
-        className='fixed bottom-5 right-5 max-[1024px]:right-3 max-[1024px]:bottom-3 max-[490px]:right-[5px] max-[490px]:bottom-[5px]'
+        className='fixed bottom-5 right-5 max-[1024px]:right-3 max-[1024px]:bottom-3 max-[490px]:right-[5px] max-[490px]:bottom-[5px] z-50'
         >
             <a
                 href={floaterData.details.link}

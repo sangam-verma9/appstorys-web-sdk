@@ -159,7 +159,7 @@ const Widget = ({ access_token, campaigns, user_id }) => {
                                 <img
                                     src={currentImage.image}
                                     alt="Widget"
-                                    style={{ height: `${widget.details.height}px` }}
+                                    style={{ height: `${widget.details.widget}` === null ? `${widget.details.height}px` : "" }}
                                     className={`w-full object-cover `}
                                 />
                             </div>
@@ -207,6 +207,7 @@ const Widget = ({ access_token, campaigns, user_id }) => {
                             onMouseLeave={resumeAutoplay}
                         >
                             <div className="w-full flex flex-wrap">
+
                                 {currentPairImages && (
                                     <div className='flex gap-3 justify-content-center w-full px-1'
                                         style={{
@@ -228,7 +229,8 @@ const Widget = ({ access_token, campaigns, user_id }) => {
                                             <img
                                                 src={currentPairImages[0].image}
                                                 alt={`Widget 0`}
-                                                style={{ height: `${widget.details.height}px` }}
+                                                // style={{ height: `${widget.details.height}px` }}
+                                                style={{ height: `${widget.details.widget}` === null ? `${widget.details.height}px` : "" }}
                                                 className="w-full h-auto"
                                             />
                                         </div>
@@ -240,7 +242,8 @@ const Widget = ({ access_token, campaigns, user_id }) => {
                                             <img
                                                 src={currentPairImages[1].image}
                                                 alt={`Widget 1`}
-                                                style={{ height: `${widget.details.height}px` }}
+                                                // style={{ height: `${widget.details.height}px` }}
+                                                style={{ height: `${widget.details.widget}` === null ? `${widget.details.height}px` : "" }}
                                                 className="w-full h-auto"
                                             />
                                         </div>

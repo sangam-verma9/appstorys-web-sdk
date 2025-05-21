@@ -96,6 +96,7 @@ const CSAT = ({ access_token, campaigns, user_id }) => {
     const ctaTextColor = styling.csatCtaTextColor || "#e3dede";
     const unselectedStarColor = styling.csatUnselectedStarColor || "#e2e9f9";
     const highStarColor = styling.csatHighStarColor || "#f6fa00";
+    const lowStarColor = styling.csatLowStarColor || "#eaad85";
     const optionStrokeColor = styling.csatOptionStrokeColor || "#ccf5d1";
     const optionTextColor = styling.csatOptionTextColour || "#000000";
     const selectedOptionBackgroundColor = styling.csatSelectedOptionBackgroundColor || "#339cff";
@@ -118,7 +119,7 @@ const CSAT = ({ access_token, campaigns, user_id }) => {
     };
 
     const starStyle = (active) => ({
-        color: active ? highStarColor : unselectedStarColor,
+        color: active ? selectedRating > 3 ? highStarColor : lowStarColor : unselectedStarColor,
         cursor: 'pointer'
     });
 
@@ -186,18 +187,26 @@ const CSAT = ({ access_token, campaigns, user_id }) => {
                     ))}
                 </div>
 
-                <div className="flex flex-col space-y-2 mb-4">
-                    {options.map((option) => (
-                        <div
-                            key={option.id}
-                            className="py-1 px-3 rounded-md cursor-pointer transition-colors"
-                            style={optionStyle(selectedOption === option.id)}
-                            onClick={() => selectOption(option.id)}
-                        >
-                            {option.label}
-                        </div>
-                    ))}
-                </div>
+                {selectedRating <= 3 && selectedRating > 0 &&
+                    (
+                        <>
+                            <div className="flex flex-col space-y-2 mb-4">
+                                {options.map((option) => (
+                                    <div
+                                        key={option.id}
+                                        className="py-1 px-3 rounded-md cursor-pointer transition-colors"
+                                        style={optionStyle(selectedOption === option.id)}
+                                        onClick={() => selectOption(option.id)}
+                                    >
+                                        {option.label}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className='w-[100%] pb-2'>
+                                <input type="text" className="py-1 px-3 rounded-md w-[100%]" placeholder='Custom' />
+                            </div>
+                        </>
+                    )}
 
                 <button
                     className="w-full py-2 rounded-md font-medium transition-colors hover:opacity-90 uppercase"
