@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { UserActionTrack } from '../Utilities/UserActionTrack.jsx';
 import { RxCross2 } from "react-icons/rx";
 import { FaHeart, FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { PiShareFat } from "react-icons/pi";
 
 const Reels = ({ access_token, campaigns, user_id }) => {
     const [reelsData, setReelsData] = useState(null);
@@ -220,6 +221,15 @@ const Reels = ({ access_token, campaigns, user_id }) => {
                             <span className='text-white'>{isLiked[currentReelIndex] ? reels[currentReelIndex].likes + 1 : reels[currentReelIndex].likes}</span>
                         </button>
 
+                        <button
+                            className="flex items-center gap-1 absolute right-4 top-3/4 z-10 flex-col"
+
+                        >
+                            <PiShareFat
+                                className="h-5 w-5 text-white"
+                            />
+                        </button>
+
                         <div className="relative w-full h-full flex items-center justify-center flex-col">
                             <video
                                 ref={videoRef}
@@ -228,7 +238,7 @@ const Reels = ({ access_token, campaigns, user_id }) => {
                                 controls={false}
                                 loop
                                 playsInline
-                                onClick={handleLinkClick}
+                            // onClick={handleLinkClick}
                             />
 
                             <div className="absolute left-1/2 bottom-12 -translate-x-1/2 text-white z-20">
