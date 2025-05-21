@@ -35,7 +35,7 @@ const Banner = ({ access_token, campaigns, user_id }) => {
           // className="flex flex-col w-full h-full justify-end items-center fixed bottom-3"
           className="w-[100%] left-[10%] fixed bottom-3 z-50"
         >
-          <div className="h-[100px] w-[80%] max-[904px]:w-[85%] max-[768px]:w-[95%] max-[768px]:h-[80px] relative mb-[10px]">
+          <div className="h-[100px] w-[80%]  relative mb-[10px]">
             {/* <img
               src={black_cross}
               alt={black_cross}
